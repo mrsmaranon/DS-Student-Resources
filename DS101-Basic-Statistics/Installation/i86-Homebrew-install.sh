@@ -21,13 +21,18 @@ brew install --cask github
 echo "installing python3"
 brew install python@3.9
 
+#symlink python to python3 location
+echo "symlink python to python3"
+ls -l /usr/local/bin/python*
+ln -s -f /usr/local/bin/python3 /usr/local/bin/python
+
 #set python/pip from python2 to python3
-echo "setting python and pip in .bashrc"
-echo "alias python=/usr/local/bin/python3" >> ~/.bashrc
-echo "alias pip=/usr/local/bin/pip3" >> ~/.bashrc
-echo "setting python and pip in .zshrc"
-echo "alias python=/usr/local/bin/python3" >> ~/.zshrc
-echo "alias pip=/usr/local/bin/pip3" >> ~/.zshrc
+#echo "setting python and pip in .bashrc"
+#echo "alias python=/usr/local/bin/python3" >> ~/.bashrc
+#echo "alias pip=/usr/local/bin/pip3" >> ~/.bashrc
+#echo "setting python and pip in .zshrc"
+#echo "alias python=/usr/local/bin/python3" >> ~/.zshrc
+#echo "alias pip=/usr/local/bin/pip3" >> ~/.zshrc
 
 #install r
 echo "installing R App"
@@ -96,12 +101,24 @@ brew install wget
 
 #install julia
 echo "installing Julia"
-echo "if Julia didn't install it's because it's not ready M1 chipset yet"
 brew install julia
 
 #install node
 echo "installing node"
 brew install node
+
+#install AWS Command Line Interface
+echo "installing awscli"
+brew install awscli
+
+#install ds-students
+pip install ds-students
+
+#upgrade pip
+pip install --upgrade pip
+
+#ensuring jupyterlab installs all it needs
+pip install jupyterlab
 
 #run brew list to get a list of applications installed
 brew list
@@ -163,8 +180,6 @@ echo ""
 echo "Wait a minute or so for the installation to complete"
 echo ""
 echo "Exit out of Julia terminal by typing CTRL-D"
-echo ""
-echo "pip install ds-students"
 echo ""
 echo "Now in a new terminal (not Julia)test jupyter lab run test by running the command below:"
 echo ""

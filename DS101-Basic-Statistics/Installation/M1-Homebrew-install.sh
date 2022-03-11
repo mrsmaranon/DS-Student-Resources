@@ -29,6 +29,11 @@ brew install --cask github
 echo "installing python3"
 brew install python@3.9
 
+#symlink python to python3 location
+#echo "symlink python to python3"
+#ls -l /usr/local/bin/python*
+#ln -s -f /usr/local/bin/python3 /usr/local/bin/python
+
 #set python/pip from python2 to python3
 echo "setting python and pip in .bashrc"
 echo "alias python=/opt/homebrew/bin/python3" >> ~/.bashrc
@@ -120,6 +125,10 @@ brew install julia
 #install node
 echo "installing node"
 brew install node
+
+#install AWS Command Line Interface
+echo "installing awscli"
+brew install awscli
 
 #sudo change owner for Jupyter lab to run
 sudo chown -R $(whoami) /Users/$USER/Library/Jupyter
